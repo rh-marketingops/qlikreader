@@ -19,6 +19,10 @@ setup(
     include_package_data=True,
     platforms='any',
     #test_suite = 'nose.collector',
+    install_requires=[
+        'retrying==1.3.3',
+        'selenium==2.53.6'
+    ],
     classifiers=[
         'Programming Language :: Python',
         'Development Status :: 0 - Beta',
@@ -30,5 +34,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Software Development :: Libraries :: Application Frameworks'
         ],
-    keywords='marketing automation data qlikview'
+    keywords='marketing automation data qlikview',
+    zip_safe=False
 )
