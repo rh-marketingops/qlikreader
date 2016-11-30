@@ -21,7 +21,8 @@ setup(
     #test_suite = 'nose.collector',
     install_requires=[
         'retrying==1.3.3',
-        'selenium==2.53.6'
+        'selenium==2.53.6',
+        'six==1.10.0'
     ],
     classifiers=[
         'Programming Language :: Python',

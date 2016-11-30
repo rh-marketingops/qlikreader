@@ -1,5 +1,5 @@
 import sys
-
+import os
 from retrying import retry
 #from pyvirtualdisplay import Display
 from xvfbwrapper import Xvfb
@@ -26,6 +26,10 @@ class QlikReader(object):
     def init_driver(self, driver_path=None, driver_wait=None, qv_url_str=None):
         """
         """
+        if not driver_path:
+            driver_dir = os.path.dirname(os.path.abspath('__file__'))
+            driver_path = os.path.join(driver_dir, 'webdriver/chromedriver')
+
         self.driver = webdriver.Chrome(driver_path)
         self.driver.wait = WebDriverWait(self.driver, driver_wait)
         self.driver.url_str = qv_url_str
