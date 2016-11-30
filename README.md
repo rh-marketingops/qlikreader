@@ -1,1 +1,2 @@
-# qlikreader
+# qlikreader ( QlikView Dashboard Reader )
+
