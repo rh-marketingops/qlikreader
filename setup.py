@@ -17,6 +17,7 @@ setup(
     #long_description=readme(),
     packages=['qlikreader'],
     include_package_data=True,
+    package_dir={'':'qlikreader'},
     platforms='any',
     #test_suite = 'nose.collector',
     install_requires=[
