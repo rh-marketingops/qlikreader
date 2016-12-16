@@ -35,6 +35,10 @@ class QlikReader(object):
             driver_dir = os.path.dirname(os.path.abspath('__file__'))
             driver_path = os.path.join(driver_dir, 'webdriver/chromedriver')
         '''
+
+        if isinstance(driver_wait, (str, unicode)):
+            driver_wait = int(driver_wait)
+
         self.driver = webdriver.Chrome(driver_path)
         self.driver.wait = WebDriverWait(self.driver, driver_wait)
         self.driver.url_str = qv_url_str
@@ -73,11 +77,13 @@ if __name__ == "__main__":
 
     web_driver_path = sys.argv[2]
 
-    wait_time = sys.argv[3]
+    wait_time = int(sys.argv[3])
 
-    locate_element = sys.argv[4] #"TextObject"
+    # "TextObject"
+    locate_element = sys.argv[4]
 
-    locate_element_xpath = sys.argv[5] #"/html/body/div[3]/div/div[1]/div[2]/table/tbody/tr/td"
+    # "/html/body/div[3]/div/div[1]/div[2]/table/tbody/tr/td"
+    locate_element_xpath = sys.argv[5]
 
     qr_driver = QlikReader()
 
