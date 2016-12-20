@@ -1,43 +1,34 @@
 from __future__ import print_function
 
-from setuptools import setup, find_packages
+from setuptools import setup, Extension
 
 import qlikreader
 
 setup(
+
     name='qlikreader',
-
     version=qlikreader.__version__,
-
-    url='https://github.com/rh-marketingops/qlikreader',
-
-    license='GNU General Public License',
-
     author='Pramod Toraskar',
-
-    #tests_require=[],
-    #install_requires=[],
-
     author_email='',
-    description='',
-
-    #long_description=readme(),
-
-    include_package_data=True,
-
-    packages=['qlikreader'],
-
-    #package_dir={'':'qlikreader'},
-
-    platforms='any',
-
-    #test_suite = 'nose.collector',
+    url='https://github.com/rh-marketingops/qlikreader',
 
     install_requires=[
         'retrying==1.3.3',
         'selenium==2.53.6',
         'six==1.10.0'
     ],
+
+    packages=['qlikreader'],
+
+    package_dir={'xvfb': ''},
+
+    #ext_modules=[Extension('xvfb', ['Xvfb.x'])],
+
+    include_package_data=True,
+
+    license='GNU General Public License',
+
+    platforms='any',
 
     classifiers=[
         'Programming Language :: Python',
@@ -52,5 +43,6 @@ setup(
         ],
 
     keywords='marketing automation data qlikview',
+
     zip_safe=False
 )
